@@ -14,4 +14,9 @@ public class MoveForwarf : MonoBehaviour
     {
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
     }
+
+    public void SetSpeed(float speed)
+    {
+        moveSpeed = speed;
+    }
 }

@@ -32,4 +32,9 @@ public class HealthController : MonoBehaviour
     {
         currentHealth -= damage;
     }
+
+    public void SetMaxHealth()
+    {
+        currentHealth = maxHealth;
+    }
 }

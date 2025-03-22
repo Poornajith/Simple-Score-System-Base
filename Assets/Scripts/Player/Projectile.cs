@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        gameObject.SetActive(false);
+       // gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
