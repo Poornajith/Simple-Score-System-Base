@@ -8,7 +8,10 @@ public class ShootProjectile : MonoBehaviour
     [SerializeField] private Transform projectileTransform;
     [SerializeField] private InputActionReference fire;
     [SerializeField] private ProjectilePool pool;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [SerializeField] private float fireRate = 0.3f;
+
+    private float nextFireTime = 0f;
     void Start()
     {
         
@@ -17,20 +20,40 @@ public class ShootProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (fire.action.IsPressed() && Time.time >= nextFireTime)
+        {
+            Fire();
+            nextFireTime = Time.time + fireRate;
+        }
     }
 
     private void OnEnable()
     {
-        fire.action.started += Fire;
+        fire.action.started += FireStarted;
+        fire.action.canceled += FireCanceled;
     }
 
     private void OnDisable()
     {
-        fire.action.started -= Fire;
+        fire.action.started -= FireStarted;
+        fire.action.canceled -= FireCanceled;
     }
 
-    private void Fire(InputAction.CallbackContext context)
+    private void FireStarted(InputAction.CallbackContext context)
+    {
+        // Optional: Handle the initial press if needed
+        if (Time.time >= nextFireTime)
+        {
+            Fire();
+            nextFireTime = Time.time + fireRate;
+        }
+    }
+    private void FireCanceled(InputAction.CallbackContext context)
+    {
+        // Optional: Handle the release if needed
+    }
+
+    private void Fire()
     {
         pool.Shoot(projectileTransform);
     }
