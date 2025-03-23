@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class HealthController : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 100;
+    [SerializeField] private int points = 5;
     [SerializeField] private Image healthBarFillImage;
 
     private float currentHealth;
@@ -26,6 +27,7 @@ public class HealthController : MonoBehaviour
     private void Die()
     {
         gameObject.SetActive(false);
+        ScoreManager.instance.UpdateScore(points);
     }
 
     public void TakeDamage(float damage)
