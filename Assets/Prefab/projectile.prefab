@@ -123,7 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5414a100284ee640b723d04e1b0389a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 15
+  moveSpeedMin: 0.5
+  moveSpeedMax: 1
 --- !u!114 &6850248509420781153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,8 +138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7115391e9e9c7734188ddc2bfa4c1c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 2
+  lifetime: 1.5
   damage: 5
+  playerBoundary:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!54 &-9126777193926738874
 Rigidbody:
   m_ObjectHideFlags: 0

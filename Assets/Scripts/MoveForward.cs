@@ -1,12 +1,14 @@
 using UnityEngine;
 
-public class MoveForwarf : MonoBehaviour
+public class MoveForward : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private float moveSpeedMin = 0.5f;
+    [SerializeField] private float moveSpeedMax = 1f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -15,8 +17,8 @@ public class MoveForwarf : MonoBehaviour
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
     }
 
-    public void SetSpeed(float speed)
+    public void RandomizeSpeed()
     {
-        moveSpeed = speed;
+        moveSpeed = Random.Range(moveSpeedMin, moveSpeedMax);
     }
 }

@@ -2,15 +2,28 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private GameObject enemyIndicator;
+    private void OnEnable()
     {
-        
+        //if (enemyIndicator == null)
+        //{
+        //    enemyIndicator = EnemyIndicatorPool.Instance.GetEnemyIndicator();
+        //}
+        //enemyIndicator.GetComponent<LookForObject>().SetLookTransform(transform);
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        //if (enemyIndicator == null)
+        //{
+        //    enemyIndicator = EnemyIndicatorPool.Instance.GetEnemyIndicator();
+        //}
+        //Debug.Log("Enemy Update" + enemyIndicator);
+    }
+    private void OnDisable()
+    {
+        //if (enemyIndicator != null)
+        //{
+        //    enemyIndicator.SetActive(false);
+        //}
     }
 }

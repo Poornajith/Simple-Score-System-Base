@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    public static SpawnManager Instance;
+
     [SerializeField] private GameObject spawnObjectPrefab;
     [SerializeField] private float spawnObjectYRange = 10f;
     [SerializeField] private float spawnObjectX = 10f;
@@ -18,6 +20,11 @@ public class SpawnManager : MonoBehaviour
     private int activeEnemyCount = 1;
 
     private List<GameObject> enemyPool;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         enemyPool = new List<GameObject>();
@@ -62,6 +69,7 @@ public class SpawnManager : MonoBehaviour
             if (!spawnObject.activeInHierarchy)
             {
                 spawnObject.GetComponent<HealthController>().SetMaxHealth();
+                spawnObject.GetComponent<MoveForward>().RandomizeSpeed();
                 spawnObject.SetActive(true);
                 spawnObject.transform.position = spawnPosition();
                 spawnObject.transform.rotation = Quaternion.Euler(0,-90,0);
@@ -72,7 +80,11 @@ public class SpawnManager : MonoBehaviour
 
     private Vector3 spawnPosition() 
     { 
-        Vector3 vector3 = new Vector3(spawnObjectX,Random.Range(-spawnObjectYRange, spawnObjectYRange),0f);
+        Vector3 vector3 = 
+            new Vector3(
+                Random.Range(spawnObjectX, spawnObjectX + 10f),
+                Random.Range(-spawnObjectYRange, spawnObjectYRange),
+                0f);
         return vector3; 
     }
 

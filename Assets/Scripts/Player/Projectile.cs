@@ -5,6 +5,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float lifetime = 2.0f;
     [SerializeField] private float damage = 5f;
+    [SerializeField] private LayerMask playerBoundary;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,7 +29,11 @@ public class Projectile : MonoBehaviour
         {
             other.gameObject.GetComponent<HealthController>().TakeDamage(damage);
         }
-        gameObject.SetActive(false);
+
+        if ((playerBoundary.value & (1 << other.gameObject.layer)) == 0) 
+        {        
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnEnable()
