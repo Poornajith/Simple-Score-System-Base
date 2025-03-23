@@ -937,10 +937,10 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 8
     NearClipPlane: 0.3
     FarClipPlane: 1000
-    Dutch: -1.5
+    Dutch: -0.21
     ModeOverride: 1
     PhysicalProperties:
       GateFit: 2
@@ -1072,7 +1072,7 @@ Transform:
   m_GameObject: {fileID: 931488407}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.380001, y: 0, z: 0}
+  m_LocalPosition: {x: -29.25, y: 0, z: 0}
   m_LocalScale: {x: 1.472518, y: 21.402561, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1091,7 +1091,6 @@ GameObject:
   - component: {fileID: 1038909547}
   - component: {fileID: 1038909549}
   - component: {fileID: 1038909548}
-  - component: {fileID: 1038909550}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1207,20 +1206,6 @@ MonoBehaviour:
   m_DefaultActionMap: Game
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1038909550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038909544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b169808bae26a745988e8a3343bc9a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyIndicatorPrefab: {fileID: 8349780988238982168, guid: bac030841773abd48b06413a26ba8616, type: 3}
-  poolSize: 10
 --- !u!1 &1156782346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,7 +1466,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1505,7 +1490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376330211}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.060720496, y: 0.108296625, z: -0.0064699776, w: 0.99224144}
+  m_LocalRotation: {x: -0.05949754, y: 0.1089733, z: 0.0047002304, w: 0.9922514}
   m_LocalPosition: {x: -3.0789852, y: -1.1909744, z: -9.691698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

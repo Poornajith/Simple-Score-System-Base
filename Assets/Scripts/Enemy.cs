@@ -2,28 +2,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private GameObject enemyIndicator;
-    private void OnEnable()
-    {
-        //if (enemyIndicator == null)
-        //{
-        //    enemyIndicator = EnemyIndicatorPool.Instance.GetEnemyIndicator();
-        //}
-        //enemyIndicator.GetComponent<LookForObject>().SetLookTransform(transform);
-    }
+    [SerializeField] private float deactivateX = -10f;
+
     private void Update()
     {
-        //if (enemyIndicator == null)
-        //{
-        //    enemyIndicator = EnemyIndicatorPool.Instance.GetEnemyIndicator();
-        //}
-        //Debug.Log("Enemy Update" + enemyIndicator);
-    }
-    private void OnDisable()
-    {
-        //if (enemyIndicator != null)
-        //{
-        //    enemyIndicator.SetActive(false);
-        //}
+        if (transform.position.x < deactivateX)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

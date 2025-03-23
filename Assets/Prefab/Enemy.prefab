@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.5
+  moveSpeedMin: 0.5
+  moveSpeedMax: 1
 --- !u!114 &4062188451005798317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a410f0c5ea650f4595d5775bf80854f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deactivateX: -15.5
 --- !u!1 &5514764446999644915
 GameObject:
   m_ObjectHideFlags: 0
