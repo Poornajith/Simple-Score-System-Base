@@ -137,7 +137,7 @@ MonoBehaviour:
   projectileTransform: {fileID: 2200594267371791405}
   fire: {fileID: -8253898842372003740, guid: 066c55568f583d04fb5bf0c317bd451c, type: 3}
   pool: {fileID: 7802655326280320866}
-  fireRate: 0.3
+  fireRate: 0.2
 --- !u!114 &8408805549225919279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,4 +181,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4917735316281758421, guid: e0a83d1538e8d524bb86d41ad75cccae, type: 3}
-  poolSize: 10
+  poolSize: 15

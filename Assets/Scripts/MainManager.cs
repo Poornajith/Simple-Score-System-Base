@@ -77,7 +77,6 @@ public class MainManager : MonoBehaviour
     {
         highScore = score;
         bestPlayerName = playerName;
-        highScoreTxt.text = "Best Score: " + bestPlayerName + " : " + highScore;
         SaveHighScore();
     }
 
@@ -92,19 +91,6 @@ public class MainManager : MonoBehaviour
         playerName = playerNameIn.text;
     }
 
-    public void StartNew() 
-    {
-        if (playerNameIn.text == "")
-        {
-            emptyNameTxt.gameObject.SetActive(true);
-            return;
-        }
-        UpdatePlayerName();
-        score = 0;
-        isGameOver = false;
-        SceneManager.LoadScene(1);
-    }
-
     public void GameOver()
     {
         isGameOver = true;
@@ -112,16 +98,5 @@ public class MainManager : MonoBehaviour
         {
             UpdateHighScore();
         }
-    }
-
-    public void QuitGame()
-    {
-#if UNITY_EDITOR
-        EditorApplication.ExitPlaymode();
-#else
-        Application.Quit(); // original code to quit Unity player
-#endif
-    }
-
-   
+    }   
 }
