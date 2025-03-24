@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
         if (transform.position.x < deactivateX)
         {
             gameObject.SetActive(false);
+            PlayerHealth.instance.TakeDamage(10);
         }
     }
 }

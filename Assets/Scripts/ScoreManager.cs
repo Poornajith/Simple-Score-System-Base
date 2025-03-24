@@ -7,17 +7,25 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI scoreTxt;
 
+    [Header("Game Over Screen")]
+    [SerializeField] private TextMeshProUGUI highScoreTxt;
+    [SerializeField] private TextMeshProUGUI totalScoreTxt;
+    [SerializeField] private TextMeshProUGUI playerNameTxt;
+
+    [Header("Player Data")]
     public string playerName;
     public int score;
     public int highScore;
-    public bool isGameOver = false;
+
     private void Awake()
     {
         instance = this;
     }
     void Start()
     {
-        isGameOver = false;
+        playerName = MainManager.instance.playerName;
+        highScore = MainManager.instance.highScore;
+        score = 0;
     }
 
     // Update is called once per frame
@@ -30,5 +38,16 @@ public class ScoreManager : MonoBehaviour
     {
         score += amount;
         scoreTxt.text = "Score: " + score;
+    }
+
+    public void GameOver()
+    {
+        playerNameTxt.text = playerName;
+        totalScoreTxt.text = score.ToString();
+
+        MainManager.instance.score = score;
+        MainManager.instance.GameOver();
+
+        highScoreTxt.text = "High Score: " + MainManager.instance.bestPlayerName + " : " + MainManager.instance.highScore;
     }
 }
