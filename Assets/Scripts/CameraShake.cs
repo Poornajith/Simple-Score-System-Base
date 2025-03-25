@@ -24,7 +24,6 @@ public class CameraShake : MonoBehaviour
             shakeTimer -= Time.deltaTime;
 
             noice.AmplitudeGain = Mathf.Lerp(startingIntensity, 0f, 1 - shakeTimer / shakeTimerTotal);
-
         }
     }
 
