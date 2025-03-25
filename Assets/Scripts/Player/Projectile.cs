@@ -6,10 +6,11 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float lifetime = 2.0f;
     [SerializeField] private float damage = 5f;
     [SerializeField] private LayerMask playerBoundary;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private ParticlePool particlePool;
     void Start()
     {
-
+        particlePool = GameObject.Find("ProjectileHits").GetComponent<ParticlePool>();
     }
 
     // Update is called once per frame
@@ -33,7 +34,10 @@ public class Projectile : MonoBehaviour
         if ((playerBoundary.value & (1 << other.gameObject.layer)) == 0) 
         {        
             gameObject.SetActive(false);
+            particlePool.PlayParticle(transform.position);
         }
+
+        
     }
 
     private void OnEnable()

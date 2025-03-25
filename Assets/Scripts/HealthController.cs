@@ -9,9 +9,11 @@ public class HealthController : MonoBehaviour
     [SerializeField] private Image healthBarFillImage;
 
     private float currentHealth;
+    private ParticlePool particlePool;
     void Start()
     {
         currentHealth = maxHealth;
+        particlePool = GameObject.Find("EnemyExplosions").GetComponent<ParticlePool>();    
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class HealthController : MonoBehaviour
         gameObject.SetActive(false);
         ScoreManager.instance.UpdateScore(points);
         CameraShake.Instance.ShakeCamera(5f, 0.1f);
+        particlePool.PlayParticle(transform.position);
     }
 
     public void TakeDamage(float damage)
