@@ -28,6 +28,7 @@ public class HealthController : MonoBehaviour
     {
         gameObject.SetActive(false);
         ScoreManager.instance.UpdateScore(points);
+        CameraShake.Instance.ShakeCamera(5f, 0.1f);
     }
 
     public void TakeDamage(float damage)
