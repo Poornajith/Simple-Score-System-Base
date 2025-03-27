@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
         {
             particlePool.PlayParticle(transform.position);
             AudioManager.instance.PlayExplosionSound();
+            CameraShake.Instance.ShakeCamera(8f, 0.1f);
             gameObject.SetActive(false);
             PlayerHealth.instance.TakeDamage(10);
         }

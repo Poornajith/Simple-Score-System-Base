@@ -10,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Image healthBarFillImage;
     [SerializeField] private GameObject gameOverPanel;
 
+    [SerializeField] private GameObject mainShip;
+    [SerializeField] private ParticleSystem bigExplosion;
+
     private float currentHealth;
 
     private void Awake()
@@ -35,6 +38,9 @@ public class PlayerHealth : MonoBehaviour
     {
         gameObject.SetActive(false);
         gameOverPanel.SetActive(true);
+        mainShip.SetActive(false);
+        bigExplosion.Play();
+        CameraShake.Instance.ShakeCamera(15f, 0.4f);
         ScoreManager.instance.GameOver();
     }
     public void TakeDamage(float damage)
