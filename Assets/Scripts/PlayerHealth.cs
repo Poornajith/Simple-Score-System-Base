@@ -43,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void RestartGame()
     {
+        AudioManager.instance.PlayButtonClickSound();
         SceneManager.LoadScene(0);
     }
 }

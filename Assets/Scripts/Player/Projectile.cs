@@ -35,6 +35,7 @@ public class Projectile : MonoBehaviour
         {        
             gameObject.SetActive(false);
             particlePool.PlayParticle(transform.position);
+            AudioManager.instance.PlayHitSound();
         }
 
         

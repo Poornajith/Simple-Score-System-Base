@@ -21,6 +21,7 @@ public class MainMenuUI : MonoBehaviour
             emptyNameTxt.gameObject.SetActive(true);
             return;
         }
+        AudioManager.instance.PlayButtonClickSound();
         MainManager.instance.UpdatePlayerName();
         MainManager.instance.score = 0;
         MainManager.instance.isGameOver = false;
@@ -29,6 +30,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void QuitGame()
     {
+        AudioManager.instance.PlayButtonClickSound();
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
 #else

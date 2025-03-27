@@ -32,6 +32,7 @@ public class HealthController : MonoBehaviour
         ScoreManager.instance.UpdateScore(points);
         CameraShake.Instance.ShakeCamera(5f, 0.1f);
         particlePool.PlayParticle(transform.position);
+        AudioManager.instance.PlayExplosionSound();
     }
 
     public void TakeDamage(float damage)

@@ -34,6 +34,7 @@ public class PowerUp : MonoBehaviour
             BoostModeImg.SetActive(true);
             singleModeImg.SetActive(false);
             StartCoroutine(PowerUpCountdown());
+            AudioManager.instance.PlayPowerUpSound();
         }
     }
 

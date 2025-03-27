@@ -55,6 +55,7 @@ public class ShootProjectile : MonoBehaviour
 
     private void Fire()
     {
+        AudioManager.instance.PlayShootSound();
         pool.Shoot(projectileTransform);
     }
 }
